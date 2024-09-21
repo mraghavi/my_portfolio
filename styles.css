@@ -1,0 +1,401 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ffff;
+}
+
+nav ul li a.active {
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Add this line */
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 100px; /* Increased from 80px */
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5em; /* Reduced from 3em */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: none;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-transform: uppercase; /* Keep uppercase for h2 */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+}
+
+.project h3 {
+    color: #00ffff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.project p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.project ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.project ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.project ul li::before {
+    content: '•';
+    color: #00ffff;
+    position: absolute;
+    left: 0;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #00ffff;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin-top: auto;
+}
+
+.project-link:hover {
+    background-color: #00cccc;
+}
+
+/* Add these styles for the dinosaur game */
+#dinoCanvas {
+    width: 100%;
+    height: 300px;
+    background-color: #f7f7f7;
+    border: 1px solid #00ffff;
+    display: block;
+}
+
+#dino-controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#startDinoGame {
+    padding: 10px 20px;
+    background-color: #00ffff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#startDinoGame:hover {
+    background-color: #00cccc;
+}
+
+#dinoScore {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/* Remove any resume-specific styles if they exist */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+#game-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto 0;
+    position: relative;
+    margin-top: 40px; /* Add some top margin to the game container */
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 300px; /* Reduced from 400px */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ffff;
+    display: block;
+    cursor: pointer; /* Add this line */
+}
+
+#game-controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#startGame {
+    padding: 10px 20px;
+    background-color: #00ffff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#startGame:hover {
+    background-color: #00cccc;
+}
+
+#score {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+#about {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ffff;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Increased from 20px */
+}
+
+.about-game {
+    flex: 0 0 100%;
+    max-width: 400px; /* Increased from 300px */
+    margin: 0 auto 20px;
+}
+
+#pongCanvas {
+    width: 100%;
+    height: 250px;
+    background-color: #000;
+    border: 2px solid #00ffff;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 20px; /* Increased from 15px */
+    line-height: 1.8; /* Increased from 1.6 */
+    font-size: 1.1em; /* Increased from 1em */
+    text-align: justify;
+}
+
+@media (min-width: 992px) {
+    .about-game {
+        flex: 0 0 40%;
+        margin: 0;
+    }
+
+    .about-text {
+        flex: 0 0 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .full-height {
+        padding-top: 80px;
+    }
+
+    #home h1 {
+        font-size: 2.5em;
+    }
+
+    #home p {
+        font-size: 1em;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+}
+
+#home {
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.contact-link i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+#projects h2,
+#dinosaur-game h2,
+#contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ffff;
+}
+
+.full-height {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-grid,
+#game-container,
+.contact-links {
+    width: 100%;
+    max-width: 1200px;
+}

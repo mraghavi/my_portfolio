@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your 3D Animated Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onkeydown="return event.key !== ' ';">
+    <canvas id="canvas"></canvas>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#dinosaur-game">Fun Game</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section id="home" class="full-height">
+            <h1>Hey, This is Sai Raghavi</h1>
+           
+            <p>Welcome to my portfolio!</p>
+            <div id="game-container">
+                <canvas id="gameCanvas"></canvas>
+                <div id="game-controls">
+                    <button id="startGame">Start Game</button>
+                    <p id="score">Score: 0</p>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="full-height">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-game">
+                    <canvas id="pongCanvas"></canvas>
+                </div>
+                <div class="about-text">
+                    <p>Hi! I'm Sai Raghavi, a passionate full-stack web developer with a keen interest in building dynamic and responsive web applications. My journey into the world of web development began during my time at Mahindra University, where I completed my bachelor's degree in Electronics and Communication Engineering from the 2020-2024 batch.</p>
+                    <p>During my academic years, I developed a fascination for coding and problem-solving, which led me to explore various programming languages and frameworks. I particularly found my passion in full-stack web development, where I love creating seamless user experiences from both the frontend and backend.</p>
+                    <p>I also had the opportunity to intern as a frontend developer for 6 months, where I worked extensively with Angular to build user interfaces that are intuitive and efficient. This hands-on experience solidified my understanding of modern web technologies and enhanced my ability to contribute to full-stack projects.</p>
+                    <p>As a developer, I enjoy taking on new challenges, learning new technologies, and continuously refining my skills. Whether it's working with frameworks like React and Angular or diving into backend development, I strive to stay on top of the latest trends in the tech world. My goal is to keep growing in this field and contribute to building innovative solutions that can make a difference.</p>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="full-height">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <h3>EpiRecipes Search Platform</h3>
+                    <p>A full-stack web application for indexing and searching the "EpiRecipes" dataset using OpenSearch.</p>
+                    <ul>
+                        <li>Developed a responsive frontend in React.js with Material UI</li>
+                        <li>Implemented real-time search, dynamic filters, and user-friendly design</li>
+                        <li>Engineered a robust backend with Django and RESTful APIs</li>
+                        <li>Optimized OpenSearch for efficient indexing and querying</li>
+                    </ul>
+                    <a href="https://github.com/mraghavi/epi_recipes" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <h3>Angular-Based Front-End Platform</h3>
+                    <p>A sophisticated Angular-based website featuring detailed blog articles on Angular frameworks and best practices.</p>
+                    <ul>
+                        <li>Implemented Angular routing for seamless navigation</li>
+                        <li>Integrated advanced PrimeNG components for enhanced user interaction</li>
+                        <li>Incorporated real-time pop-up notifications and custom 404 error pages</li>
+                        <li>Optimized for cross-platform compatibility using CSS3 and responsive design</li>
+                    </ul>
+                    <a href="https://github.com/mraghavi/Accion-Angular-Basics-training" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+        <section id="dinosaur-game" class="full-height">
+            <h2>Dinosaur Game</h2>
+            <div id="game-container">
+                <canvas id="dinoCanvas"></canvas>
+                <div id="dino-controls">
+                    <button id="startDinoGame">Start Game</button>
+                    <p id="dinoScore">Score: 0</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="full-height">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/m-s-sai-raghavi-reddy/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="mailto:sairaghavireddy@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    Email
+
+                </a>
+                <a href="https://github.com/mraghavi" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

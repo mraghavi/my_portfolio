@@ -83,20 +83,26 @@ gsap.utils.toArray('section').forEach((section, index) => {
         }
     });
 
-    tl.from(section.querySelector('h1, h2'), {
-        duration: 1,
-        y: 50,
-        opacity: 0,
-        ease: 'power3.out'
-    });
+    const heading = section.querySelector('h1, h2');
+    if (heading) {
+        tl.from(heading, {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: 'power3.out'
+        });
+    }
 
-    tl.from(section.querySelectorAll('p, .project, .resume-content, #contact-form'), {
-        duration: 1,
-        y: 50,
-        opacity: 0,
-        stagger: 0.2,
-        ease: 'power3.out'
-    }, "-=0.5");
+    const elements = section.querySelectorAll('p, .project, .resume-content, #contact-form');
+    if (elements.length > 0) {
+        tl.from(elements, {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'power3.out'
+        }, "-=0.5");
+    }
 });
 
 // Project interaction
@@ -236,8 +242,10 @@ function handleKeyDown(e) {
     if (!gameActive) return;
     if (e.key === 'ArrowLeft') {
         rocket.moving.left = true;
+        rocket.moving.right = false; // Ensure right movement is stopped
     } else if (e.key === 'ArrowRight') {
         rocket.moving.right = true;
+        rocket.moving.left = false; // Ensure left movement is stopped
     } else if (e.key === ' ') {
         shootBullet();
     }
